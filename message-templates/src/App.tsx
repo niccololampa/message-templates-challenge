@@ -1,22 +1,19 @@
 import React from "react"
+import { Routes, Route, BrowserRouter, Navigate } from "react-router-dom"
+import { MessageTemplate } from "./views"
+import { NavigationBar } from "./components"
 import "./App.css"
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <BrowserRouter>
+        <NavigationBar />
+        <Routes>
+          <Route path="/message-template/*" element={<MessageTemplate />} />
+          <Route path="*" element={<Navigate to="/message-template" replace />} />
+        </Routes>
+      </BrowserRouter>
     </div>
   )
 }
