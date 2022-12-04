@@ -1,6 +1,7 @@
 import React from "react"
 import { Routes, Route, BrowserRouter, Navigate } from "react-router-dom"
 import { MessageTemplate } from "./views"
+import { Box, Container } from "@mui/material"
 import { NavigationBar } from "./components"
 import "./App.css"
 
@@ -9,10 +10,22 @@ function App() {
     <div className="App">
       <BrowserRouter>
         <NavigationBar />
-        <Routes>
-          <Route path="/message-template/*" element={<MessageTemplate />} />
-          <Route path="*" element={<Navigate to="/message-template" replace />} />
-        </Routes>
+        <Box sx={{ display: "flex" }}>
+          <Box
+            sx={{
+              width: "15%",
+              height: "100vh",
+              backgroundColor: "#F5F7FF",
+            }}
+          ></Box>
+
+          <Box>
+            <Routes>
+              <Route path="/message-template/*" element={<MessageTemplate />} />
+              <Route path="*" element={<Navigate to="/message-template" replace />} />
+            </Routes>
+          </Box>
+        </Box>
       </BrowserRouter>
     </div>
   )
