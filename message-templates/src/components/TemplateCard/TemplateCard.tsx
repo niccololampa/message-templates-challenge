@@ -115,7 +115,7 @@ const TemplateCard = ({
         <StyledMoreIconButton onClick={handleMore} size="small">
           <MoreHorizIcon fontSize="small" />
         </StyledMoreIconButton>
-        {showMore ? (
+        {showMore && (
           <Box>
             <div onClick={() => handleOpenModal("rename")}>
               <SvgIcon component={TextIcon} sx={{ color: "#16171B", fontSize: "11px" }} />
@@ -126,8 +126,6 @@ const TemplateCard = ({
               Delete
             </div>
           </Box>
-        ) : (
-          <></>
         )}
       </div>
     </StyledTemplateBox>
