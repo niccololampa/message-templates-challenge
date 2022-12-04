@@ -1,0 +1,17 @@
+export const ModalStyle = {
+  position: "absolute",
+  // display: "grid",
+  // gridTemplateRows: "65% 25% 10%",
+  // gridTemplateColumns: "40% 58%",
+  // gap: "10px 10px",
+  top: "50%",
+  left: "50%",
+  transform: "translate(-50%, -50%)",
+  width: 500,
+  height: 200,
+  bgcolor: "#ffffff",
+  borderRadius: "3%",
+  boxShadow: 24,
+  p: 4,
+  zIndex: 10,
+}

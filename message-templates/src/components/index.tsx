@@ -1,2 +1,8 @@
 export { default as NavigationBar } from "./NavigationBar/NavigationBar"
 export { default as BonjoroLogo } from "./BonjoroLogo/BonjoroLogo"
+export { default as PageHeader1 } from "./PageHeader1/PageHeader1"
+export { default as ModalHeader } from "./ModalHeader/ModalHeader"
+export { default as ColoredButton } from "./ColoredButton/ColoredButton"
+export { default as PageDescText } from "./PageDescText/PageDescText"
+export { default as TemplateCard } from "./TemplateCard/TemplateCard"
+export { default as TemplateModal } from "./TemplateModal/TemplateModal"
