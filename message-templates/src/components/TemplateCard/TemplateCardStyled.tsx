@@ -2,15 +2,12 @@ import { Box, Stack, Typography, IconButton } from "@mui/material"
 import { styled } from "@mui/material/styles"
 
 export const StyledTemplateBox = styled(Box)(() => ({
-  border: 2,
-  backgroundColor: "gray",
-  // boxShadow: "3px",
-  borderColor: "yellow",
   display: "flex",
   alignItems: "center",
   height: "80px",
   width: "auto",
   padding: 5,
+  boxShadow: "0 0 15px  #E4E4E4",
 }))
 
 export const StyledImageBox = styled(Box)(() => ({
