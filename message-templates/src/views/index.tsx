@@ -1,1 +1,1 @@
-export { default as MessageTemplate } from "./MessageTemplate/MessageTemplate"
+export { default as MessageTemplateView } from "./MessageTemplateView/MessageTemplateView"

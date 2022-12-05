@@ -1,6 +1,6 @@
 import React from "react"
 import { Routes, Route, BrowserRouter, Navigate } from "react-router-dom"
-import { MessageTemplate } from "./views"
+import { MessageTemplateView } from "./views"
 import { Box, Container } from "@mui/material"
 import { NavigationBar } from "./components"
 import "./App.css"
@@ -21,7 +21,7 @@ function App() {
 
           <Box>
             <Routes>
-              <Route path="/message-template/*" element={<MessageTemplate />} />
+              <Route path="/message-template/*" element={<MessageTemplateView />} />
               <Route path="*" element={<Navigate to="/message-template" replace />} />
             </Routes>
           </Box>

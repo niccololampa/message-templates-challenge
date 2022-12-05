@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState } from "react"
 import { ModalStyle } from "./TemplateModalStyled"
 import { Backdrop, Box, Modal, Fade, TextField } from "@mui/material"
 import { ColoredButton, ModalHeader } from "../../components"
@@ -14,25 +14,25 @@ const TemplateModal = ({
   visible,
   modalType,
   handleClose,
+  handleNew,
+  handleDelete,
+  handleRename,
 }: {
   visible: boolean
   modalType: ModalTypes
   handleClose: () => void
+  handleNew: (name: string) => void
+  handleDelete: () => void
+  handleRename: (name: string) => void
 }) => {
   if (!visible) {
     return <></>
   }
 
-  const handleCreateNew = () => {
-    console.log("works")
-  }
+  const [modalInput, setModalInput] = useState<string>("")
 
-  const handleRename = () => {
-    console.log("works")
-  }
-
-  const handleDelete = () => {
-    console.log("works")
+  const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setModalInput(event.target.value)
   }
 
   return (
@@ -49,7 +49,12 @@ const TemplateModal = ({
         <Box sx={ModalStyle}>
           <ModalHeader title={modalType ? titleText[modalType] : ""}></ModalHeader>
           {(modalType === "new" || modalType === "rename") && (
-            <TextField label="Template Name" variant="outlined" fullWidth />
+            <TextField
+              label="Template Name"
+              variant="outlined"
+              fullWidth
+              onChange={handleInputChange}
+            />
           )}
           <ColoredButton
             text="Cancel"
@@ -59,10 +64,12 @@ const TemplateModal = ({
           />
 
           {modalType === "new" && (
-            <ColoredButton text="Create new template" handleClick={handleCreateNew} />
+            <ColoredButton text="Create new template" handleClick={() => handleNew(modalInput)} />
           )}
 
-          {modalType === "rename" && <ColoredButton text="Rename" handleClick={handleRename} />}
+          {modalType === "rename" && (
+            <ColoredButton text="Rename" handleClick={() => handleRename(modalInput)} />
+          )}
 
           {modalType === "delete" && (
             <ColoredButton

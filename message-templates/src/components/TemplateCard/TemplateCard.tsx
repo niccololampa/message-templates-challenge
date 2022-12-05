@@ -43,9 +43,9 @@ const TemplateCard = ({
   handleOpenModal,
 }: {
   template: MessageTemplate
-  handleOpenModal: (modalType: ModalTypes) => void
+  handleOpenModal: ({ modalType, id }: { modalType: ModalTypes; id?: string }) => void
 }) => {
-  const { thumbnail, name, createdBy, date, sent, opened, viewed, liked, clicked, replied } =
+  const { id, thumbnail, name, createdBy, date, sent, opened, viewed, liked, clicked, replied } =
     template
 
   const [showMore, setShowMore] = useState(false)
@@ -65,7 +65,7 @@ const TemplateCard = ({
       </div>
       <div>
         <StyledSectionText>CREATED</StyledSectionText>
-        <StyledInfoText>{moment(date).format("DD MMMM YYYY")}</StyledInfoText>
+        <StyledInfoText>{moment(date, "MM/DD/YYYY").format("DD MMMM YYYY")}</StyledInfoText>
       </div>
       <StyledStatsBox>
         <StyledProfileStack direction="row" spacing={1}>
@@ -117,11 +117,11 @@ const TemplateCard = ({
         </StyledMoreIconButton>
         {showMore && (
           <Box>
-            <div onClick={() => handleOpenModal("rename")}>
+            <div onClick={() => handleOpenModal({ modalType: "rename", id })}>
               <SvgIcon component={TextIcon} sx={{ color: "#16171B", fontSize: "11px" }} />
               Rename
             </div>
-            <div onClick={() => handleOpenModal("delete")}>
+            <div onClick={() => handleOpenModal({ modalType: "delete", id })}>
               <SvgIcon component={TrashIcon} sx={{ color: "#993101", fontSize: "6px" }} />
               Delete
             </div>

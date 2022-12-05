@@ -1,0 +1,28 @@
+[
+  {
+    "id": "1",
+    "thumbnail": "/template-image.png",
+    "name": "Semptember greet template",
+    "createdBy": "Matt",
+    "date": "02/08/2022",
+    "sent": 23,
+    "opened": 0.5,
+    "viewed": 0.22,
+    "liked": 0.4,
+    "clicked": 0.1,
+    "replied": 0.05
+  },
+  {
+    "id": "2",
+    "thumbnail": "/template-image.png",
+    "name": "New template 1",
+    "createdBy": "John Doe",
+    "date": "02/08/2022",
+    "sent": 0,
+    "opened": 0,
+    "viewed": 0,
+    "liked": 0,
+    "clicked": 0,
+    "replied": 0
+  }
+]
