@@ -1,7 +1,7 @@
 import React from "react"
 import { Routes, Route, BrowserRouter, Navigate } from "react-router-dom"
 import { MessageTemplateView } from "./views"
-import { Box, Container } from "@mui/material"
+import { Box } from "@mui/material"
 import { NavigationBar } from "./components"
 import "./App.css"
 

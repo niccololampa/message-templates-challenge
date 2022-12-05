@@ -1,4 +1,4 @@
-import React, { createElement, useState } from "react"
+import React, { useState } from "react"
 import { ReactComponent as ClickedIcon } from "../../svg/clicked_2.svg"
 import { ReactComponent as LikedIcon } from "../../svg/liked_2.svg"
 import { ReactComponent as OpenedIcon } from "../../svg/opened_2.svg"
@@ -9,7 +9,6 @@ import { ReactComponent as TextIcon } from "../../svg/text.svg"
 import { ReactComponent as TrashIcon } from "../../svg/trash.svg"
 import { Box, SvgIcon } from "@mui/material"
 import MoreHorizIcon from "@mui/icons-material/MoreHoriz"
-// import { PlayCircle, Favorite, ChatBubble, MoreHoriz } from "@mui/icons-material/"
 import moment from "moment"
 import { MessageTemplate, ModalTypes } from "../../types"
 import {
@@ -25,18 +24,14 @@ import {
   StyledStatsBox,
 } from "./TemplateCardStyled"
 
-const iconsObject = {
-  clicked: ClickedIcon,
-  liked: LikedIcon,
-  opened: OpenedIcon,
-  replied: RepliedIcon,
-  sent: SentIcon,
-  viewed: ViewedIcon,
-}
-
 const percentageConverter = (stats: number) => {
   return (stats * 100).toFixed(0)
 }
+
+const statSVGIconFontSize = "15px"
+const moreSVGIconFontSize = "20px"
+const styledInfoStackSpacing = 1
+const styledInfoStackMargin = 2
 
 const TemplateCard = ({
   template,
@@ -49,6 +44,53 @@ const TemplateCard = ({
     template
 
   const [showMore, setShowMore] = useState(false)
+
+  const statsSpecs = [
+    { name: "Sent", icon: SentIcon, color: "#0033FF", value: `${sent}` },
+    {
+      name: "Opened",
+      icon: OpenedIcon,
+      color: "#6D9F00",
+      value: `${percentageConverter(opened)}%`,
+    },
+    {
+      name: "Viewed",
+      icon: ViewedIcon,
+      color: "#7D086A",
+      value: `${percentageConverter(viewed)}%`,
+    },
+    {
+      name: "Liked",
+      icon: LikedIcon,
+      color: "#D16DC1",
+      value: `${percentageConverter(liked)}%`,
+    },
+    {
+      name: "Clicked",
+      icon: ClickedIcon,
+      color: "#FFD000",
+      value: `${percentageConverter(clicked)}%`,
+    },
+    {
+      name: "Replied",
+      icon: RepliedIcon,
+      color: "#6783FF",
+      value: `${percentageConverter(replied)}%`,
+    },
+  ]
+
+  const moreOptionsSpecs = [
+    {
+      name: "Rename",
+      icon: TextIcon,
+      color: "#16171B",
+    },
+    {
+      name: "Delete",
+      icon: TrashIcon,
+      color: "#993101",
+    },
+  ]
 
   const handleMore = () => {
     setShowMore(!showMore)
@@ -69,46 +111,23 @@ const TemplateCard = ({
       </div>
       <StyledStatsBox>
         <StyledProfileStack direction="row" spacing={1}>
-          <StyledInfoStack direction="column" spacing={1} marginLeft={2}>
-            <StyledStatsLabelText>
-              <SvgIcon component={SentIcon} sx={{ color: "#0033FF", fontSize: "15px" }} />
-              Sent
-            </StyledStatsLabelText>
-            <StyledStatsText>{sent}</StyledStatsText>
-          </StyledInfoStack>
-          <StyledInfoStack direction="column" spacing={1} marginLeft={2}>
-            <StyledStatsLabelText>
-              <SvgIcon component={OpenedIcon} sx={{ color: "#6D9F00", fontSize: "15px" }} />
-              Opened
-            </StyledStatsLabelText>
-            <StyledStatsText>{percentageConverter(opened)}%</StyledStatsText>
-          </StyledInfoStack>
-          <StyledInfoStack direction="column" spacing={1} marginLeft={2}>
-            <StyledStatsLabelText>
-              <SvgIcon component={ViewedIcon} sx={{ color: "#7D086A", fontSize: "15px" }} />
-              Viewed
-            </StyledStatsLabelText>
-            <StyledStatsText>{percentageConverter(viewed)}%</StyledStatsText>
-          </StyledInfoStack>
-          <StyledInfoStack direction="column" spacing={1} marginLeft={2}>
-            <StyledStatsLabelText>
-              <SvgIcon component={LikedIcon} sx={{ color: "#D16DC1", fontSize: "15px" }} />
-              Liked
-            </StyledStatsLabelText>
-            <StyledStatsText>{percentageConverter(liked)}%</StyledStatsText>
-          </StyledInfoStack>
-          <StyledInfoStack direction="column" spacing={1} marginLeft={2}>
-            <StyledStatsLabelText>
-              <SvgIcon component={ClickedIcon} sx={{ color: "#FFD000", fontSize: "15px" }} />
-              Clicked
-            </StyledStatsLabelText>
-            <StyledStatsText>{percentageConverter(clicked)}%</StyledStatsText>
-          </StyledInfoStack>
-          <StyledInfoStack direction="column" spacing={1} marginLeft={2}>
-            <SvgIcon component={RepliedIcon} sx={{ color: "#6783FF", fontSize: "15px" }} />
-            <StyledStatsLabelText>Replied</StyledStatsLabelText>
-            <StyledStatsText>{percentageConverter(replied)}%</StyledStatsText>
-          </StyledInfoStack>
+          {statsSpecs.map((stat) => (
+            <StyledInfoStack
+              key={stat.name}
+              direction="column"
+              spacing={styledInfoStackSpacing}
+              marginLeft={styledInfoStackMargin}
+            >
+              <StyledStatsLabelText>
+                <SvgIcon
+                  component={stat.icon}
+                  sx={{ color: stat.color, fontSize: statSVGIconFontSize }}
+                />
+                {stat.name}
+              </StyledStatsLabelText>
+              <StyledStatsText>{stat.value}</StyledStatsText>
+            </StyledInfoStack>
+          ))}
         </StyledProfileStack>
       </StyledStatsBox>
       <div>
@@ -117,14 +136,20 @@ const TemplateCard = ({
         </StyledMoreIconButton>
         {showMore && (
           <Box>
-            <div onClick={() => handleOpenModal({ modalType: "rename", id })}>
-              <SvgIcon component={TextIcon} sx={{ color: "#16171B", fontSize: "11px" }} />
-              Rename
-            </div>
-            <div onClick={() => handleOpenModal({ modalType: "delete", id })}>
-              <SvgIcon component={TrashIcon} sx={{ color: "#993101", fontSize: "6px" }} />
-              Delete
-            </div>
+            {moreOptionsSpecs.map((option) => (
+              <div
+                key={option.name}
+                onClick={() =>
+                  handleOpenModal({ modalType: option.name.toLowerCase() as ModalTypes, id })
+                }
+              >
+                <SvgIcon
+                  component={option.icon}
+                  sx={{ color: option.color, fontSize: moreSVGIconFontSize }}
+                />
+                {option.name}
+              </div>
+            ))}
           </Box>
         )}
       </div>
@@ -132,10 +157,4 @@ const TemplateCard = ({
   )
 }
 
-// <SentIcon fill={"#0033FF"} />
-// <ViewedIcon fill={"#7D086A"} />
-// <OpenedIcon fill={"#6D9F00"} />
-// <LikedIcon fill={"#D16DC1"} />
-// <ClickedIcon fill={"#FFD000"} />
-// <RepliedIcon fill={"#6783FF"} fontSize={"small"} />
 export default TemplateCard
