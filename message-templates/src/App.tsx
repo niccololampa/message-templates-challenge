@@ -16,9 +16,9 @@ function App() {
           <Box sx={{ display: "flex" }}>
             <Box
               sx={{
-                width: "15%",
-                height: "100vh",
-                backgroundColor: "#F5F7FF",
+                width: appTheme?.sideDrawer?.width,
+                height: appTheme?.sideDrawer?.height,
+                backgroundColor: appTheme?.sideDrawer?.backgroundColor,
               }}
             ></Box>
 

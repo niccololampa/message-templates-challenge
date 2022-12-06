@@ -28,6 +28,11 @@ declare module "@mui/material/styles" {
         borderWidth?: string
       }
     }
+    sideDrawer?: {
+      width?: string | number
+      height?: string | number
+      backgroundColor?: string
+    }
   }
 
   interface ThemeOptions {
@@ -57,6 +62,11 @@ declare module "@mui/material/styles" {
         borderWidth?: string
       }
     }
+    sideDrawer?: {
+      width?: string | number
+      height?: string | number
+      backgroundColor?: string
+    }
   }
 }
 
@@ -79,5 +89,10 @@ export const appTheme = createTheme({
       backColorHover: "#990131",
       textColor: "#ffffff",
     },
+  },
+  sideDrawer: {
+    width: "15%",
+    height: "100vh",
+    backgroundColor: "#f5f7ff",
   },
 })
