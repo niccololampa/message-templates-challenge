@@ -1,19 +1,8 @@
 import React from "react"
-import { Drawer } from "@mui/material"
+import { StyledDrawerSection } from "./DrawerSectionStyled"
 
-const drawerWidth = 240
-
-const DrawerSection = () => {
-  return (
-    <Drawer
-      variant="permanent"
-      sx={{
-        width: drawerWidth,
-        flexShrink: 0,
-        ["& .MuiDrawer-paper"]: { width: drawerWidth, boxSizing: "border-box" },
-      }}
-    ></Drawer>
-  )
+const DrawerSection = ({ width }: { width?: string | number }) => {
+  return <StyledDrawerSection variant="permanent" width={width} />
 }
 
 export default DrawerSection
