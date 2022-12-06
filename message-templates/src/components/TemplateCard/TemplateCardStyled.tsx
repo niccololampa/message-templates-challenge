@@ -8,6 +8,7 @@ export const StyledTemplateBox = styled(Box)(() => ({
   width: "auto",
   padding: 5,
   boxShadow: "0 0 15px  #E4E4E4",
+  marginBottom: "20px",
 }))
 
 export const StyledImageBox = styled(Box)(() => ({

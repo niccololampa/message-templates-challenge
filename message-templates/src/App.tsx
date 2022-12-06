@@ -21,7 +21,7 @@ function App() {
               }}
             ></Box>
 
-            <Box>
+            <Box sx={{ flexGrow: 2 }}>
               <Routes>
                 <Route path="/message-template/*" element={<MessageTemplateView />} />
                 <Route path="*" element={<Navigate to="/message-template" replace />} />

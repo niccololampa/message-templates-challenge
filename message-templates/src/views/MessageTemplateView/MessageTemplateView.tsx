@@ -11,7 +11,7 @@ import {
   TemplateCard,
   TemplateModal,
 } from "../../components"
-import { Container } from "@mui/material"
+import { Container, Box } from "@mui/material"
 
 const data: MessageTemplate[] = jsonData as MessageTemplate[]
 
@@ -84,13 +84,23 @@ const MessageTemplateView = () => {
 
   return (
     <div>
-      <Container maxWidth="xl" sx={{ marginTop: "80px" }}>
-        <PageHeader1 title={"Message templates"} />
-        <ColoredButton
-          text="Create New Template"
-          width="fit-content"
-          handleClick={handleNewTemplateClick}
-        />
+      <Container maxWidth="xl" sx={{ marginTop: "30px" }}>
+        <Box
+          sx={{
+            display: "flex",
+            justifyContent: "space-between",
+            flexWrap: "wrap",
+            flexDirection: "row",
+            marginBottom: "20px",
+          }}
+        >
+          <PageHeader1 title={"Message templates"} />
+          <ColoredButton
+            text="Create New Template"
+            width="fit-content"
+            handleClick={handleNewTemplateClick}
+          />
+        </Box>
         <PageDescText description={pageDesc} fontSize={theme?.pageDescText?.fontSize} />
         {sampleData.map((template) => (
           <TemplateCard
