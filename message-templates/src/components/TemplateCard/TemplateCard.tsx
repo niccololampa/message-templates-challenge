@@ -1,4 +1,5 @@
 import React, { useState } from "react"
+import { useTheme } from "@mui/material/styles"
 import { ReactComponent as ClickedIcon } from "../../svg/clicked_2.svg"
 import { ReactComponent as LikedIcon } from "../../svg/liked_2.svg"
 import { ReactComponent as OpenedIcon } from "../../svg/opened_2.svg"
@@ -28,11 +29,6 @@ const percentageConverter = (stats: number) => {
   return (stats * 100).toFixed(0)
 }
 
-const statSVGIconFontSize = "15px"
-const moreSVGIconFontSize = "20px"
-const styledInfoStackSpacing = 1
-const styledInfoStackMargin = 2
-
 const TemplateCard = ({
   template,
   handleOpenModal,
@@ -42,6 +38,8 @@ const TemplateCard = ({
 }) => {
   const { id, thumbnail, name, createdBy, date, sent, opened, viewed, liked, clicked, replied } =
     template
+
+  const theme = useTheme()
 
   const [showMore, setShowMore] = useState(false)
 
@@ -110,18 +108,21 @@ const TemplateCard = ({
         <StyledInfoText>{moment(date, "MM/DD/YYYY").format("DD MMMM YYYY")}</StyledInfoText>
       </div>
       <StyledStatsBox>
-        <StyledProfileStack direction="row" spacing={1}>
+        <StyledProfileStack direction="row" spacing={theme?.templateCard?.profileStack?.spacing}>
           {statsSpecs.map((stat) => (
             <StyledInfoStack
               key={stat.name}
               direction="column"
-              spacing={styledInfoStackSpacing}
-              marginLeft={styledInfoStackMargin}
+              spacing={theme?.templateCard?.infoStack?.spacing}
+              marginLeft={theme?.templateCard?.infoStack?.margin}
             >
               <StyledStatsLabelText>
                 <SvgIcon
                   component={stat.icon}
-                  sx={{ color: stat.color, fontSize: statSVGIconFontSize }}
+                  sx={{
+                    color: stat.color,
+                    fontSize: theme?.templateCard?.svgIcons?.statIcons?.fontSize,
+                  }}
                 />
                 {stat.name}
               </StyledStatsLabelText>
@@ -145,7 +146,10 @@ const TemplateCard = ({
               >
                 <SvgIcon
                   component={option.icon}
-                  sx={{ color: option.color, fontSize: moreSVGIconFontSize }}
+                  sx={{
+                    color: option.color,
+                    fontSize: theme?.templateCard?.svgIcons?.moreIcons?.fontSize,
+                  }}
                 />
                 {option.name}
               </div>

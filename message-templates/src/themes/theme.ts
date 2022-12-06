@@ -36,6 +36,23 @@ export const appTheme = createTheme({
   pageDescText: {
     fontSize: "15px",
   },
+  templateCard: {
+    svgIcons: {
+      statIcons: {
+        fontSize: "15px",
+      },
+      moreIcons: {
+        fontSize: "20px",
+      },
+    },
+    infoStack: {
+      margin: 1,
+      spacing: 2,
+    },
+    profileStack: {
+      spacing: 2,
+    },
+  },
 })
 
 declare module "@mui/material/styles" {
@@ -81,6 +98,24 @@ declare module "@mui/material/styles" {
     pageDescText?: {
       fontSize?: string | number
     }
+    templateCard?: {
+      svgIcons?: {
+        statIcons?: {
+          fontSize?: string | number
+        }
+        moreIcons?: {
+          fontSize?: string | number
+        }
+      }
+      infoStack?: {
+        margin?: string | number
+        spacing?: string | number
+      }
+      profileStack?: {
+        margin?: string | number
+        spacing?: string | number
+      }
+    }
   }
 
   interface ThemeOptions {
@@ -124,6 +159,24 @@ declare module "@mui/material/styles" {
     }
     pageDescText?: {
       fontSize?: string | number
+    }
+    templateCard?: {
+      svgIcons?: {
+        statIcons?: {
+          fontSize?: string | number
+        }
+        moreIcons?: {
+          fontSize?: string | number
+        }
+      }
+      infoStack?: {
+        margin?: string | number
+        spacing?: string | number
+      }
+      profileStack?: {
+        margin?: string | number
+        spacing?: string | number
+      }
     }
   }
 }
