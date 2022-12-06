@@ -4,12 +4,11 @@ import { MessageTemplateView } from "./views"
 import { Box, ThemeProvider, CssBaseline } from "@mui/material"
 import { appTheme } from "./themes/theme"
 import { NavigationBar } from "./components"
-import "./App.css"
 
 function App() {
   return (
     <ThemeProvider theme={appTheme}>
-      <div className="App">
+      <div>
         <CssBaseline enableColorScheme />
         <BrowserRouter>
           <NavigationBar />
