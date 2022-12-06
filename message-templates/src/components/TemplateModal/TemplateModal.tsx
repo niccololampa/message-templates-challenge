@@ -1,4 +1,5 @@
 import React, { useState } from "react"
+import { useTheme } from "@mui/material/styles"
 import { ModalStyle } from "./TemplateModalStyled"
 import { Backdrop, Box, Modal, Fade, TextField } from "@mui/material"
 import { ColoredButton, ModalHeader } from "../../components"
@@ -28,6 +29,8 @@ const TemplateModal = ({
   if (!visible) {
     return <></>
   }
+
+  const theme = useTheme()
 
   const [modalInput, setModalInput] = useState<string>("")
 
@@ -59,8 +62,8 @@ const TemplateModal = ({
           <ColoredButton
             text="Cancel"
             handleClick={handleClose}
-            backColor="#ffffff"
-            backColorHover="#ffd000"
+            backColor={theme?.buttons?.cancel?.backColor}
+            backColorHover={theme?.buttons?.cancel?.backColorHover}
           />
 
           {modalType === "new" && (
@@ -75,9 +78,9 @@ const TemplateModal = ({
             <ColoredButton
               text="Delete"
               handleClick={handleDelete}
-              backColor={"#CC3341"}
-              backColorHover={"#990131"}
-              textColor={"#ffffff"}
+              backColor={theme?.buttons?.delete?.backColor}
+              backColorHover={theme?.buttons?.delete?.backColorHover}
+              textColor={theme?.buttons?.delete?.textColor}
             />
           )}
         </Box>

@@ -1,4 +1,5 @@
 import React from "react"
+import { useTheme } from "@mui/material/styles"
 import { StyledButton, StyledButtonText } from "./ColoredButtonStyled"
 
 const ColoredButton = ({
@@ -22,17 +23,19 @@ const ColoredButton = ({
   borderStyle?: string
   borderwidth?: string
 }) => {
+  const theme = useTheme()
+
   return (
     <StyledButton
       variant="contained"
       onClick={handleClick}
       width={width}
-      textcolor={textColor}
-      backcolor={backColor}
-      backcolorhover={backColorHover}
-      bordercolor={borderColor}
-      borderstyle={borderStyle}
-      borderwidth={borderwidth}
+      textcolor={textColor || theme?.buttons?.coloredDefault?.textColor}
+      backcolor={backColor || theme?.buttons?.coloredDefault?.backColor}
+      backcolorhover={backColorHover || theme?.buttons?.coloredDefault?.backColorHover}
+      bordercolor={borderColor || theme?.buttons?.coloredDefault?.borderColor}
+      borderstyle={borderStyle || theme?.buttons?.coloredDefault?.borderStyle}
+      borderwidth={borderwidth || theme?.buttons?.coloredDefault?.borderWidth}
     >
       <StyledButtonText>{text}</StyledButtonText>
     </StyledButton>
