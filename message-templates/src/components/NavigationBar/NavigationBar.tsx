@@ -1,26 +1,27 @@
 import React from "react"
 import { BonjoroLogo } from "../../components"
+import { useTheme } from "@mui/material/styles"
 import { Box, Toolbar, Container } from "@mui/material"
-import "./NavigationBar.css"
 import { StyledAppBar, StyledLogoContainer } from "./NavigationBarStyled"
 
 const NavigationBar = () => {
-  const logoWidth = "186px"
-  const logoHeight = "48px"
-  const boxPadding = 2
+  const theme = useTheme()
 
   return (
     <>
-      <StyledAppBar position="static" className="app-bar">
+      <StyledAppBar position="static">
         <Container maxWidth={false}>
           <Toolbar disableGutters>
             <Box
               sx={{
-                padding: { boxPadding },
+                padding: theme?.navigationBar?.boxPadding,
                 display: { xs: "none", md: "flex" },
               }}
             >
-              <BonjoroLogo width={logoWidth} height={logoHeight} />
+              <BonjoroLogo
+                width={theme?.navigationBar?.logo?.width}
+                height={theme?.navigationBar?.logo?.height}
+              />
             </Box>
 
             <StyledLogoContainer
@@ -30,10 +31,13 @@ const NavigationBar = () => {
             >
               <Box
                 sx={{
-                  padding: { boxPadding },
+                  padding: theme?.navigationBar?.boxPadding,
                 }}
               >
-                <BonjoroLogo width={logoWidth} height={logoHeight} />
+                <BonjoroLogo
+                  width={theme?.navigationBar?.logo?.width}
+                  height={theme?.navigationBar?.logo?.height}
+                />
               </Box>
             </StyledLogoContainer>
             <Box

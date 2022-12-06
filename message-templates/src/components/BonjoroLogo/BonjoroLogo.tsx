@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom"
 import { Box } from "@mui/material"
 import bonjoroLogo from "../../bonjoro-logo.png"
 
-const BonjoroLogo = ({ width, height }: { width: string | number; height: string | number }) => {
+const BonjoroLogo = ({ width, height }: { width?: string | number; height?: string | number }) => {
   const navigate = useNavigate()
 
   const handleClick = () => {
