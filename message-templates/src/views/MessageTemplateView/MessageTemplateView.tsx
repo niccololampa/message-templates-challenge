@@ -18,9 +18,9 @@ const data: MessageTemplate[] = jsonData as MessageTemplate[]
 const MessageTemplateView = () => {
   const theme = useTheme()
   const [sampleData, setSampleData] = useState<MessageTemplate[]>(data)
-  const [modalVisible, setModalVisible] = useState<boolean>(false)
+  const [modalVisible, setModalVisible] = useState<boolean>(true)
   const [idModal, setIdModal] = useState("")
-  const [modalType, setModalType] = useState<ModalTypes>("")
+  const [modalType, setModalType] = useState<ModalTypes>("delete")
   const pageDesc =
     "Customize how your videos look in the recepient's inbox, add personalization, add your own branding and call-to-actions to your video landing pages"
   const handleNewTemplateClick = () => {

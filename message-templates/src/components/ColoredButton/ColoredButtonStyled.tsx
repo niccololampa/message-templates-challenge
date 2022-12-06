@@ -10,6 +10,7 @@ export const StyledButton = styled(Button)(
     bordercolor = "initial",
     borderstyle = "none",
     borderwidth = "initial",
+    margin = "0px",
   }: {
     width?: string | number
     textcolor?: string
@@ -18,6 +19,7 @@ export const StyledButton = styled(Button)(
     bordercolor?: string
     borderstyle?: string
     borderwidth?: string
+    margin?: string | number
   }) => ({
     backgroundColor: backcolor,
     "&:hover": {
@@ -34,6 +36,7 @@ export const StyledButton = styled(Button)(
     fontSize: "16px",
     borderRadius: "0",
     textTransform: "none",
+    margin: margin,
   }),
 )
 

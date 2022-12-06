@@ -57,32 +57,46 @@ const TemplateModal = ({
               variant="outlined"
               fullWidth
               onChange={handleInputChange}
+              sx={{ marginBottom: "20px" }}
             />
           )}
-          <ColoredButton
-            text="Cancel"
-            handleClick={handleClose}
-            backColor={theme?.buttons?.cancel?.backColor}
-            backColorHover={theme?.buttons?.cancel?.backColorHover}
-          />
-
-          {modalType === "new" && (
-            <ColoredButton text="Create new template" handleClick={() => handleNew(modalInput)} />
-          )}
-
-          {modalType === "rename" && (
-            <ColoredButton text="Rename" handleClick={() => handleRename(modalInput)} />
-          )}
-
-          {modalType === "delete" && (
+          <Box sx={{ display: "flex", justifyContent: "flex-end" }}>
             <ColoredButton
-              text="Delete"
-              handleClick={handleDelete}
-              backColor={theme?.buttons?.delete?.backColor}
-              backColorHover={theme?.buttons?.delete?.backColorHover}
-              textColor={theme?.buttons?.delete?.textColor}
+              text="Cancel"
+              width="fit-content"
+              handleClick={handleClose}
+              backColor={theme?.buttons?.cancel?.backColor}
+              backColorHover={theme?.buttons?.cancel?.backColorHover}
+              margin="0 10px 0 0"
             />
-          )}
+
+            {modalType === "new" && (
+              <ColoredButton
+                text="Create new template"
+                width="fit-content"
+                handleClick={() => handleNew(modalInput)}
+              />
+            )}
+
+            {modalType === "rename" && (
+              <ColoredButton
+                text="Rename"
+                width="fit-content"
+                handleClick={() => handleRename(modalInput)}
+              />
+            )}
+
+            {modalType === "delete" && (
+              <ColoredButton
+                text="Delete"
+                width="fit-content"
+                handleClick={handleDelete}
+                backColor={theme?.buttons?.delete?.backColor}
+                backColorHover={theme?.buttons?.delete?.backColorHover}
+                textColor={theme?.buttons?.delete?.textColor}
+              />
+            )}
+          </Box>
         </Box>
       </Fade>
     </Modal>
