@@ -1,4 +1,5 @@
 import React, { useState } from "react"
+import { useTheme } from "@mui/material/styles"
 import { v4 as uuidv4 } from "uuid"
 import moment from "moment"
 import { ModalTypes, MessageTemplate } from "../../types"
@@ -15,6 +16,7 @@ import { Container } from "@mui/material"
 const data: MessageTemplate[] = jsonData as MessageTemplate[]
 
 const MessageTemplateView = () => {
+  const theme = useTheme()
   const [sampleData, setSampleData] = useState<MessageTemplate[]>(data)
   const [modalVisible, setModalVisible] = useState<boolean>(false)
   const [idModal, setIdModal] = useState("")
@@ -89,7 +91,7 @@ const MessageTemplateView = () => {
           width="fit-content"
           handleClick={handleNewTemplateClick}
         />
-        <PageDescText description={pageDesc} fontSize="12" />
+        <PageDescText description={pageDesc} fontSize={theme?.pageDescText?.fontSize} />
         {sampleData.map((template) => (
           <TemplateCard
             key={template.id}

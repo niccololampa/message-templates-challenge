@@ -32,6 +32,10 @@ export const appTheme = createTheme({
     height: "100vh",
     backgroundColor: "#f5f7ff",
   },
+
+  pageDescText: {
+    fontSize: "15px",
+  },
 })
 
 declare module "@mui/material/styles" {
@@ -74,6 +78,9 @@ declare module "@mui/material/styles" {
       height?: string | number
       backgroundColor?: string
     }
+    pageDescText?: {
+      fontSize?: string | number
+    }
   }
 
   interface ThemeOptions {
@@ -114,6 +121,9 @@ declare module "@mui/material/styles" {
       width?: string | number
       height?: string | number
       backgroundColor?: string
+    }
+    pageDescText?: {
+      fontSize?: string | number
     }
   }
 }
