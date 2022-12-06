@@ -7,6 +7,7 @@ export const appTheme = createTheme({
       height: "48px",
     },
     boxPadding: 2,
+    backColor: "#2e2e36",
   },
   buttons: {
     coloredDefault: {
@@ -30,7 +31,7 @@ export const appTheme = createTheme({
   sideDrawer: {
     width: "15%",
     height: "100vh",
-    backgroundColor: "#f5f7ff",
+    backColor: "#f5f7ff",
   },
 
   pageDescText: {
@@ -63,6 +64,7 @@ declare module "@mui/material/styles" {
         height?: number | string
       }
       boxPadding?: number | string
+      backColor: string
     }
     buttons?: {
       coloredDefault?: {
@@ -93,7 +95,7 @@ declare module "@mui/material/styles" {
     sideDrawer?: {
       width?: string | number
       height?: string | number
-      backgroundColor?: string
+      backColor?: string
     }
     pageDescText?: {
       fontSize?: string | number
@@ -125,6 +127,7 @@ declare module "@mui/material/styles" {
         height?: number | string
       }
       boxPadding?: number | string
+      backColor: string
     }
     buttons?: {
       coloredDefault?: {
@@ -155,7 +158,7 @@ declare module "@mui/material/styles" {
     sideDrawer?: {
       width?: string | number
       height?: string | number
-      backgroundColor?: string
+      backColor?: string
     }
     pageDescText?: {
       fontSize?: string | number

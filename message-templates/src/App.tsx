@@ -18,7 +18,7 @@ function App() {
               sx={{
                 width: appTheme?.sideDrawer?.width,
                 height: appTheme?.sideDrawer?.height,
-                backgroundColor: appTheme?.sideDrawer?.backgroundColor,
+                backgroundColor: appTheme?.sideDrawer?.backColor,
               }}
             ></Box>
 

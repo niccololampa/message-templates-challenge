@@ -9,7 +9,7 @@ const NavigationBar = () => {
 
   return (
     <>
-      <StyledAppBar position="static">
+      <StyledAppBar position="static" backcolor={theme?.navigationBar?.backColor}>
         <Container maxWidth={false}>
           <Toolbar disableGutters>
             <Box
