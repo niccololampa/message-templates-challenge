@@ -86,18 +86,17 @@ export const StyledNameText = styled(Typography)(() => ({
 export const StyledCreatedText = styled(Typography)(() => ({
   maxWidth: "100%",
   fontSize: "14px",
+  fontWeight: "bold",
   color: "#6c7188",
 }))
 
 export const StyledInfoText = styled(Box)(() => ({
   fontSize: "12px",
-  fontWeight: "bold",
   color: "#aeb0be",
 }))
 
 export const StyledStatsLabelText = styled(Typography)(() => ({
   fontSize: "12px",
-  fontWeight: "bold",
   color: "#6c7188",
 }))
 

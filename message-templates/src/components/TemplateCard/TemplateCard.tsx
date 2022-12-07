@@ -106,7 +106,7 @@ const TemplateCard = ({
       </StyledInfoBox>
       <StyledDateBox>
         <StyledCreatedText>CREATED</StyledCreatedText>
-        <StyledInfoText>{moment(date, "MM/DD/YYYY").format("DD MMMM YYYY")}</StyledInfoText>
+        <StyledInfoText>{moment(date, "MM/DD/YYYY").format("DD/MM/YYYY")}</StyledInfoText>
       </StyledDateBox>
       <StyledStatsBox>
         <StyledStatStack direction="row" spacing={theme?.templateCard?.statStack?.spacing}>
