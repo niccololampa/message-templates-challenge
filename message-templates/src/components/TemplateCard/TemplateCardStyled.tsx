@@ -1,4 +1,4 @@
-import { Box, Stack, Typography, IconButton } from "@mui/material"
+import { Box, Stack, Typography } from "@mui/material"
 import { styled } from "@mui/material/styles"
 
 export const StyledTemplateBox = styled(Box)(() => ({
@@ -90,10 +90,4 @@ export const StyledStatsText = styled(Typography)(() => ({
 
 export const StyledSectionText = styled(Typography)(() => ({
   maxWidth: "100%",
-}))
-
-export const StyledMoreIconButton = styled(IconButton)(() => ({
-  "&:hover": {
-    backgroundColor: "#ffe367",
-  },
 }))

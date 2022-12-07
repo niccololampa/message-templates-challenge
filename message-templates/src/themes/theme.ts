@@ -43,7 +43,7 @@ export const appTheme = createTheme({
         fontSize: "15px",
       },
       moreIcons: {
-        fontSize: "20px",
+        fontSize: "25px",
       },
     },
     infoStack: {

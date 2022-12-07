@@ -13,3 +13,10 @@ export interface MessageTemplate {
 }
 
 export type ModalTypes = "new" | "rename" | "delete" | ""
+
+export interface MenuItemSpec {
+  name: string
+  icon: React.ComponentType
+  color: string
+  hoverColor: string
+}

@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React from "react"
 import { useTheme } from "@mui/material/styles"
 import { ReactComponent as ClickedIcon } from "../../svg/clicked_2.svg"
 import { ReactComponent as LikedIcon } from "../../svg/liked_2.svg"
@@ -6,10 +6,11 @@ import { ReactComponent as OpenedIcon } from "../../svg/opened_2.svg"
 import { ReactComponent as RepliedIcon } from "../../svg/replied_2.svg"
 import { ReactComponent as SentIcon } from "../../svg/sent_2.svg"
 import { ReactComponent as ViewedIcon } from "../../svg/viewed.svg"
-import { ReactComponent as TextIcon } from "../../svg/text.svg"
-import { ReactComponent as TrashIcon } from "../../svg/trash.svg"
+import TitleIcon from "@mui/icons-material/Title"
+import DeleteIcon from "@mui/icons-material/Delete"
 import { Box, SvgIcon } from "@mui/material"
-import MoreHorizIcon from "@mui/icons-material/MoreHoriz"
+import { MoreMenu } from "../../components"
+
 import moment from "moment"
 import { MessageTemplate, ModalTypes } from "../../types"
 import {
@@ -25,7 +26,6 @@ import {
   StyledInfoStack,
   StyledStatsText,
   StyledStatsLabelText,
-  StyledMoreIconButton,
   StyledStatsBox,
 } from "./TemplateCardStyled"
 
@@ -44,8 +44,6 @@ const TemplateCard = ({
     template
 
   const theme = useTheme()
-
-  const [showMore, setShowMore] = useState(false)
 
   const statsSpecs = [
     { name: "Sent", icon: SentIcon, color: "#0033FF", value: `${sent}` },
@@ -84,19 +82,17 @@ const TemplateCard = ({
   const moreOptionsSpecs = [
     {
       name: "Rename",
-      icon: TextIcon,
+      icon: TitleIcon,
       color: "#16171B",
+      hoverColor: "#fff6ce",
     },
     {
       name: "Delete",
-      icon: TrashIcon,
+      icon: DeleteIcon,
       color: "#993101",
+      hoverColor: "#fff9ff",
     },
   ]
-
-  const handleMore = () => {
-    setShowMore(!showMore)
-  }
 
   return (
     <StyledTemplateBox>
@@ -136,30 +132,12 @@ const TemplateCard = ({
         </StyledStatStack>
       </StyledStatsBox>
       <StyledMoreBox>
-        <StyledMoreIconButton onClick={handleMore} size="small">
-          <MoreHorizIcon fontSize="small" />
-        </StyledMoreIconButton>
-        {showMore && (
-          <Box>
-            {moreOptionsSpecs.map((option) => (
-              <div
-                key={option.name}
-                onClick={() =>
-                  handleOpenModal({ modalType: option.name.toLowerCase() as ModalTypes, id })
-                }
-              >
-                <SvgIcon
-                  component={option.icon}
-                  sx={{
-                    color: option.color,
-                    fontSize: theme?.templateCard?.svgIcons?.moreIcons?.fontSize,
-                  }}
-                />
-                {option.name}
-              </div>
-            ))}
-          </Box>
-        )}
+        <MoreMenu
+          menuItemSpecs={moreOptionsSpecs}
+          handleOpenModal={({ modalType }: { modalType: ModalTypes }) => {
+            handleOpenModal({ modalType, id })
+          }}
+        />
       </StyledMoreBox>
     </StyledTemplateBox>
   )
