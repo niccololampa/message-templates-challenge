@@ -97,7 +97,7 @@ const TemplateCard = ({
   return (
     <StyledTemplateBox>
       <StyledImageBox>
-        <Box component="img" alt="coverPhoto" src={thumbnail} width={"100%"} height={"80%"} />
+        <Box component="img" alt="coverPhoto" src={thumbnail} width={"100px"} height={"auto"} />
       </StyledImageBox>
       <StyledInfoBox>
         <StyledSectionText>{name}</StyledSectionText>

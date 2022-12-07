@@ -23,7 +23,6 @@ export const StyledImageBox = styled(Box)(() => ({
 
 export const StyledInfoBox = styled(Box)(() => ({
   width: "23%",
-  minWidth: "fit-content",
   display: "flex",
   flexDirection: "column",
   justifyContent: "center",
@@ -96,4 +95,5 @@ export const StyledStatsText = styled(Typography)(() => ({
 
 export const StyledSectionText = styled(Typography)(() => ({
   maxWidth: "100%",
+  overflow: "hidden",
 }))
