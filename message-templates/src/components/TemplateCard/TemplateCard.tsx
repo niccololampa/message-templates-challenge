@@ -126,7 +126,11 @@ const TemplateCard = ({
         }}
       >
         <StyledNameText
-          color={namePicHovered ? "" : theme?.templateCard?.text?.nameText?.color}
+          color={
+            namePicHovered
+              ? theme?.templateCard?.text?.nameText?.hoverColor
+              : theme?.templateCard?.text?.nameText?.color
+          }
           fontSize={theme?.templateCard?.text?.nameText?.fontSize}
           fontWeight={theme?.templateCard?.text?.nameText?.fontWeight}
         >

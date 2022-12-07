@@ -71,6 +71,7 @@ export const appTheme = createTheme({
         color: "#6c7188",
         fontSize: "17px",
         fontWeight: "bold",
+        hoverColor: "#000000",
       },
       createdText: {
         color: "#6c7188",
@@ -126,7 +127,7 @@ declare module "@mui/material/styles" {
       infoStack?: StackSpec
       statStack?: StackSpec
       text?: {
-        nameText?: TextType
+        nameText?: TextType & { hoverColor?: string }
         createdText?: TextType
         infoText?: TextType
         labelText?: TextType
@@ -167,7 +168,7 @@ declare module "@mui/material/styles" {
       infoStack?: StackSpec
       statStack?: StackSpec
       text?: {
-        nameText?: TextType
+        nameText?: TextType & { hoverColor?: string }
         createdText?: TextType
         infoText?: TextType
         labelText?: TextType
