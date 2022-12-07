@@ -52,7 +52,7 @@ export const appTheme = createTheme({
   },
 
   pageDescText: {
-    fontSize: "15px",
+    fontSize: "17px",
   },
   templateCard: {
     svgIcons: {
