@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState } from "react"
 import { useTheme } from "@mui/material/styles"
 import { ReactComponent as ClickedIcon } from "../../svg/clicked_2.svg"
 import { ReactComponent as LikedIcon } from "../../svg/liked_2.svg"
@@ -45,6 +45,8 @@ const TemplateCard = ({
     template
 
   const theme = useTheme()
+
+  const [namePicHovered, setNamePicHovered] = useState<boolean>(false)
 
   const statsSpecs = [
     { name: "Sent", icon: SentIcon, color: "#0033FF", value: `${sent}` },
@@ -97,11 +99,34 @@ const TemplateCard = ({
 
   return (
     <StyledTemplateBox>
-      <StyledImageBox>
-        <Box component="img" alt="coverPhoto" src={thumbnail} width={"100px"} height={"auto"} />
+      <StyledImageBox
+        onMouseOver={() => {
+          setNamePicHovered(true)
+        }}
+        onMouseOut={() => {
+          setNamePicHovered(false)
+        }}
+      >
+        <Box
+          component="img"
+          alt="coverPhoto"
+          src={thumbnail}
+          width={"100px"}
+          height={"auto"}
+          sx={{
+            border: namePicHovered ? "2px solid #fed20B" : "none",
+          }}
+        />
       </StyledImageBox>
-      <StyledInfoBox>
-        <StyledNameText>{name}</StyledNameText>
+      <StyledInfoBox
+        onMouseOver={() => {
+          setNamePicHovered(true)
+        }}
+        onMouseOut={() => {
+          setNamePicHovered(false)
+        }}
+      >
+        <StyledNameText color={namePicHovered ? "#000000" : "#6c7188"}>{name}</StyledNameText>
         <StyledInfoText>Created by: {createdBy}</StyledInfoText>
       </StyledInfoBox>
       <StyledDateBox>

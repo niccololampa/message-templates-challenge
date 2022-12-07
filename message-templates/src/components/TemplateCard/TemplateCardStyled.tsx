@@ -15,6 +15,7 @@ export const StyledTemplateBox = styled(Box)(() => ({
 
 export const StyledImageBox = styled(Box)(() => ({
   width: "10%",
+  borderRadius: 1,
   minWidth: "fit-content",
   height: "100%",
   display: "flex",
@@ -75,12 +76,12 @@ export const StyledStatLabelBox = styled(Box)(() => ({
   height: "100%",
 }))
 
-export const StyledNameText = styled(Typography)(() => ({
+export const StyledNameText = styled(Typography)(({ color = "#6c7188" }: { color?: string }) => ({
   fontSize: "17px",
   maxWidth: "100%",
   overflow: "hidden",
   fontWeight: "bold",
-  color: "#6c7188",
+  color,
 }))
 
 export const StyledCreatedText = styled(Typography)(() => ({
