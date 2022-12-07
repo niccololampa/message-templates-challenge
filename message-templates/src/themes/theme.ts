@@ -80,39 +80,16 @@ declare module "@mui/material/styles" {
       backColor: string
     }
     buttons?: {
-      coloredDefault?: {
-        backColor?: string
-        backColorHover?: string
-        textColor?: string
-        borderColor?: string
-        borderStyle?: string
-        borderWidth?: string
-      }
-      cancel?: {
-        backColor?: string
-        backColorHover?: string
-        textColor?: string
-        borderColor?: string
-        borderStyle?: string
-        borderWidth?: string
-      }
-      delete?: {
-        backColor?: string
-        backColorHover?: string
-        textColor?: string
-        borderColor?: string
-        borderStyle?: string
-        borderWidth?: string
-      }
+      coloredDefault?: ButtonType
+      cancel?: ButtonType
+      delete?: ButtonType
     }
     sideDrawer?: {
       width?: string | number
       height?: string | number
       backColor?: string
     }
-    pageDescText?: {
-      fontSize?: string | number
-    }
+    pageDescText?: TextType
     templateCard?: {
       svgIcons?: {
         statIcons?: {
@@ -122,15 +99,32 @@ declare module "@mui/material/styles" {
           fontSize?: string | number
         }
       }
-      infoStack?: {
-        margin?: string | number
-        spacing?: string | number
-      }
-      statStack?: {
-        margin?: string | number
-        spacing?: string | number
+      infoStack?: StackSpec
+      statStack?: StackSpec
+      text?: {
+        name?: TextType
       }
     }
+  }
+
+  interface ButtonType {
+    backColor?: string
+    backColorHover?: string
+    textColor?: string
+    borderColor?: string
+    borderStyle?: string
+    borderWidth?: string
+  }
+
+  interface TextType {
+    color?: string
+    fontSize?: string
+    fontWeight?: string
+  }
+
+  interface StackSpec {
+    margin?: string | number
+    spacing?: string | number
   }
 
   interface ThemeOptions {
@@ -143,39 +137,16 @@ declare module "@mui/material/styles" {
       backColor: string
     }
     buttons?: {
-      coloredDefault?: {
-        backColor?: string
-        backColorHover?: string
-        textColor?: string
-        borderColor?: string
-        borderStyle?: string
-        borderWidth?: string
-      }
-      cancel?: {
-        backColor?: string
-        backColorHover?: string
-        textColor?: string
-        borderColor?: string
-        borderStyle?: string
-        borderWidth?: string
-      }
-      delete?: {
-        backColor?: string
-        backColorHover?: string
-        textColor?: string
-        borderColor?: string
-        borderStyle?: string
-        borderWidth?: string
-      }
+      coloredDefault?: ButtonType
+      cancel?: ButtonType
+      delete?: ButtonType
     }
     sideDrawer?: {
       width?: string | number
       height?: string | number
       backColor?: string
     }
-    pageDescText?: {
-      fontSize?: string | number
-    }
+    pageDescText?: TextType
     templateCard?: {
       svgIcons?: {
         statIcons?: {
@@ -185,13 +156,10 @@ declare module "@mui/material/styles" {
           fontSize?: string | number
         }
       }
-      infoStack?: {
-        margin?: string | number
-        spacing?: string | number
-      }
-      statStack?: {
-        margin?: string | number
-        spacing?: string | number
+      infoStack?: StackSpec
+      statStack?: StackSpec
+      text?: {
+        name?: TextType
       }
     }
   }
