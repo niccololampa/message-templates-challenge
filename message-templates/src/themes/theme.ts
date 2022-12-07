@@ -48,10 +48,9 @@ export const appTheme = createTheme({
     },
     infoStack: {
       margin: 1,
-      spacing: 2,
     },
-    profileStack: {
-      spacing: 2,
+    statStack: {
+      // spacing: 2,
     },
   },
 })
@@ -113,7 +112,7 @@ declare module "@mui/material/styles" {
         margin?: string | number
         spacing?: string | number
       }
-      profileStack?: {
+      statStack?: {
         margin?: string | number
         spacing?: string | number
       }
@@ -176,7 +175,7 @@ declare module "@mui/material/styles" {
         margin?: string | number
         spacing?: string | number
       }
-      profileStack?: {
+      statStack?: {
         margin?: string | number
         spacing?: string | number
       }

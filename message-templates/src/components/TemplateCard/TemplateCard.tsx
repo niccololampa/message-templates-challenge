@@ -15,9 +15,13 @@ import { MessageTemplate, ModalTypes } from "../../types"
 import {
   StyledTemplateBox,
   StyledImageBox,
+  StyledInfoBox,
+  StyledDateBox,
+  StyledMoreBox,
+  StyledStatLabelBox,
   StyledInfoText,
   StyledSectionText,
-  StyledProfileStack,
+  StyledStatStack,
   StyledInfoStack,
   StyledStatsText,
   StyledStatsLabelText,
@@ -99,16 +103,16 @@ const TemplateCard = ({
       <StyledImageBox>
         <Box component="img" alt="coverPhoto" src={thumbnail} width={"100%"} height={"80%"} />
       </StyledImageBox>
-      <div>
+      <StyledInfoBox>
         <StyledSectionText>{name}</StyledSectionText>
         <StyledInfoText>Created by: {createdBy}</StyledInfoText>
-      </div>
-      <div>
+      </StyledInfoBox>
+      <StyledDateBox>
         <StyledSectionText>CREATED</StyledSectionText>
         <StyledInfoText>{moment(date, "MM/DD/YYYY").format("DD MMMM YYYY")}</StyledInfoText>
-      </div>
+      </StyledDateBox>
       <StyledStatsBox>
-        <StyledProfileStack direction="row" spacing={theme?.templateCard?.profileStack?.spacing}>
+        <StyledStatStack direction="row" spacing={theme?.templateCard?.statStack?.spacing}>
           {statsSpecs.map((stat) => (
             <StyledInfoStack
               key={stat.name}
@@ -116,7 +120,7 @@ const TemplateCard = ({
               spacing={theme?.templateCard?.infoStack?.spacing}
               marginLeft={theme?.templateCard?.infoStack?.margin}
             >
-              <StyledStatsLabelText>
+              <StyledStatLabelBox>
                 <SvgIcon
                   component={stat.icon}
                   sx={{
@@ -124,14 +128,14 @@ const TemplateCard = ({
                     fontSize: theme?.templateCard?.svgIcons?.statIcons?.fontSize,
                   }}
                 />
-                {stat.name}
-              </StyledStatsLabelText>
+                <StyledStatsLabelText>{stat.name}</StyledStatsLabelText>
+              </StyledStatLabelBox>
               <StyledStatsText>{stat.value}</StyledStatsText>
             </StyledInfoStack>
           ))}
-        </StyledProfileStack>
+        </StyledStatStack>
       </StyledStatsBox>
-      <div>
+      <StyledMoreBox>
         <StyledMoreIconButton onClick={handleMore} size="small">
           <MoreHorizIcon fontSize="small" />
         </StyledMoreIconButton>
@@ -156,7 +160,7 @@ const TemplateCard = ({
             ))}
           </Box>
         )}
-      </div>
+      </StyledMoreBox>
     </StyledTemplateBox>
   )
 }
