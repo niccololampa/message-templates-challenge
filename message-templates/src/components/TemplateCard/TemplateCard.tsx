@@ -10,7 +10,6 @@ import TitleIcon from "@mui/icons-material/Title"
 import DeleteIcon from "@mui/icons-material/Delete"
 import { Box, SvgIcon } from "@mui/material"
 import { MoreMenu } from "../../components"
-
 import moment from "moment"
 import { MessageTemplate, ModalTypes } from "../../types"
 import {
@@ -126,12 +125,36 @@ const TemplateCard = ({
           setNamePicHovered(false)
         }}
       >
-        <StyledNameText color={namePicHovered ? "#000000" : "#6c7188"}>{name}</StyledNameText>
-        <StyledInfoText>Created by: {createdBy}</StyledInfoText>
+        <StyledNameText
+          color={namePicHovered ? "#000000" : theme?.templateCard?.text?.nameText?.color}
+          fontSize={theme?.templateCard?.text?.nameText?.fontSize}
+          fontWeight={theme?.templateCard?.text?.nameText?.fontWeight}
+        >
+          {name}
+        </StyledNameText>
+        <StyledInfoText
+          color={theme?.templateCard?.text?.infoText?.color}
+          fontSize={theme?.templateCard?.text?.infoText?.fontSize}
+          fontWeight={theme?.templateCard?.text?.infoText?.fontWeight}
+        >
+          Created by: {createdBy}
+        </StyledInfoText>
       </StyledInfoBox>
       <StyledDateBox>
-        <StyledCreatedText>CREATED</StyledCreatedText>
-        <StyledInfoText>{moment(date, "MM/DD/YYYY").format("DD/MM/YYYY")}</StyledInfoText>
+        <StyledCreatedText
+          color={theme?.templateCard?.text?.createdText?.color}
+          fontSize={theme?.templateCard?.text?.createdText?.fontSize}
+          fontWeight={theme?.templateCard?.text?.createdText?.fontWeight}
+        >
+          CREATED
+        </StyledCreatedText>
+        <StyledInfoText
+          color={theme?.templateCard?.text?.infoText?.color}
+          fontSize={theme?.templateCard?.text?.infoText?.fontSize}
+          fontWeight={theme?.templateCard?.text?.infoText?.fontWeight}
+        >
+          {moment(date, "MM/DD/YYYY").format("DD/MM/YYYY")}
+        </StyledInfoText>
       </StyledDateBox>
       <StyledStatsBox>
         <StyledStatStack direction="row" spacing={theme?.templateCard?.statStack?.spacing}>
@@ -150,9 +173,21 @@ const TemplateCard = ({
                     fontSize: theme?.templateCard?.svgIcons?.statIcons?.fontSize,
                   }}
                 />
-                <StyledStatsLabelText>{stat.name}</StyledStatsLabelText>
+                <StyledStatsLabelText
+                  color={theme?.templateCard?.text?.labelText?.color}
+                  fontSize={theme?.templateCard?.text?.labelText?.fontSize}
+                  fontWeight={theme?.templateCard?.text?.labelText?.fontWeight}
+                >
+                  {stat.name}
+                </StyledStatsLabelText>
               </StyledStatLabelBox>
-              <StyledStatsText>{stat.value}</StyledStatsText>
+              <StyledStatsText
+                color={theme?.templateCard?.text?.statsText?.color}
+                fontSize={theme?.templateCard?.text?.statsText?.fontSize}
+                fontWeight={theme?.templateCard?.text?.statsText?.fontWeight}
+              >
+                {stat.value}
+              </StyledStatsText>
             </StyledInfoStack>
           ))}
         </StyledStatStack>

@@ -66,6 +66,30 @@ export const appTheme = createTheme({
     infoStack: {
       margin: 1,
     },
+    text: {
+      nameText: {
+        color: "#6c7188",
+        fontSize: "17px",
+        fontWeight: "bold",
+      },
+      createdText: {
+        color: "#6c7188",
+        fontSize: "14px",
+        fontWeight: "bold",
+      },
+      infoText: {
+        color: "#aeb0be",
+        fontSize: "12px",
+      },
+      labelText: {
+        color: "#6c7188",
+        fontSize: "12px",
+      },
+      statsText: {
+        fontSize: "18px",
+        fontWeight: "bold",
+      },
+    },
   },
 })
 
@@ -102,29 +126,13 @@ declare module "@mui/material/styles" {
       infoStack?: StackSpec
       statStack?: StackSpec
       text?: {
-        name?: TextType
+        nameText?: TextType
+        createdText?: TextType
+        infoText?: TextType
+        labelText?: TextType
+        statsText?: TextType
       }
     }
-  }
-
-  interface ButtonType {
-    backColor?: string
-    backColorHover?: string
-    textColor?: string
-    borderColor?: string
-    borderStyle?: string
-    borderWidth?: string
-  }
-
-  interface TextType {
-    color?: string
-    fontSize?: string
-    fontWeight?: string
-  }
-
-  interface StackSpec {
-    margin?: string | number
-    spacing?: string | number
   }
 
   interface ThemeOptions {
@@ -159,8 +167,32 @@ declare module "@mui/material/styles" {
       infoStack?: StackSpec
       statStack?: StackSpec
       text?: {
-        name?: TextType
+        nameText?: TextType
+        createdText?: TextType
+        infoText?: TextType
+        labelText?: TextType
+        statsText?: TextType
       }
     }
+  }
+
+  interface ButtonType {
+    backColor?: string
+    backColorHover?: string
+    textColor?: string
+    borderColor?: string
+    borderStyle?: string
+    borderWidth?: string
+  }
+
+  interface TextType {
+    color?: string
+    fontSize?: string
+    fontWeight?: string
+  }
+
+  interface StackSpec {
+    margin?: string | number
+    spacing?: string | number
   }
 }

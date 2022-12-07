@@ -76,32 +76,85 @@ export const StyledStatLabelBox = styled(Box)(() => ({
   height: "100%",
 }))
 
-export const StyledNameText = styled(Typography)(({ color = "#6c7188" }: { color?: string }) => ({
-  fontSize: "17px",
-  maxWidth: "100%",
-  overflow: "hidden",
-  fontWeight: "bold",
-  color,
-}))
+export const StyledNameText = styled(Typography)(
+  ({
+    color = "#6c7188",
+    fontSize = "17px",
+    fontWeight = "bold",
+  }: {
+    color?: string
+    fontSize?: string
+    fontWeight?: string
+  }) => ({
+    fontSize,
+    maxWidth: "100%",
+    overflow: "hidden",
+    fontWeight,
+    color,
+  }),
+)
 
-export const StyledCreatedText = styled(Typography)(() => ({
-  maxWidth: "100%",
-  fontSize: "14px",
-  fontWeight: "bold",
-  color: "#6c7188",
-}))
+export const StyledCreatedText = styled(Typography)(
+  ({
+    color = "#6c7188",
+    fontSize = "14px",
+    fontWeight = "bold",
+  }: {
+    color?: string
+    fontSize?: string
+    fontWeight?: string
+  }) => ({
+    fontSize,
+    maxWidth: "100%",
+    fontWeight,
+    color,
+  }),
+)
 
-export const StyledInfoText = styled(Box)(() => ({
-  fontSize: "12px",
-  color: "#aeb0be",
-}))
+export const StyledInfoText = styled(Typography)(
+  ({
+    color = "#aeb0be",
+    fontSize = "12px",
+    fontWeight = "normal",
+  }: {
+    color?: string
+    fontSize?: string
+    fontWeight?: string
+  }) => ({
+    fontSize,
+    fontWeight,
+    color,
+  }),
+)
 
-export const StyledStatsLabelText = styled(Typography)(() => ({
-  fontSize: "12px",
-  color: "#6c7188",
-}))
+export const StyledStatsLabelText = styled(Typography)(
+  ({
+    color = "#6c7188",
+    fontSize = "12px",
+    fontWeight = "normal",
+  }: {
+    color?: string
+    fontSize?: string
+    fontWeight?: string
+  }) => ({
+    fontSize,
+    fontWeight,
+    color,
+  }),
+)
 
-export const StyledStatsText = styled(Typography)(() => ({
-  fontSize: "18px",
-  fontWeight: "bold",
-}))
+export const StyledStatsText = styled(Typography)(
+  ({
+    color = "#000000",
+    fontSize = "18px",
+    fontWeight = "bold",
+  }: {
+    color?: string
+    fontSize?: string
+    fontWeight?: string
+  }) => ({
+    fontSize,
+    fontWeight,
+    color,
+  }),
+)
