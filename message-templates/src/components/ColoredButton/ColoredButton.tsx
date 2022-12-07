@@ -13,6 +13,7 @@ const ColoredButton = ({
   borderStyle,
   borderwidth,
   margin,
+  disabled,
 }: {
   text: string
   handleClick: () => void
@@ -24,6 +25,7 @@ const ColoredButton = ({
   borderStyle?: string
   borderwidth?: string
   margin?: string | number
+  disabled?: boolean
 }) => {
   const theme = useTheme()
 
@@ -31,6 +33,7 @@ const ColoredButton = ({
     <StyledButton
       variant="contained"
       onClick={handleClick}
+      disabled={disabled}
       width={width}
       margin={margin}
       textcolor={textColor || theme?.buttons?.coloredDefault?.textColor}

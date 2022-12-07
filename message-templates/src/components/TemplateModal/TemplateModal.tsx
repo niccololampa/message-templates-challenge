@@ -73,6 +73,7 @@ const TemplateModal = ({
             {modalType === "new" && (
               <ColoredButton
                 text="Create new template"
+                disabled={modalInput ? false : true}
                 width="fit-content"
                 handleClick={() => handleNew(modalInput)}
               />
@@ -81,6 +82,7 @@ const TemplateModal = ({
             {modalType === "rename" && (
               <ColoredButton
                 text="Rename"
+                disabled={modalInput ? false : true}
                 width="fit-content"
                 handleClick={() => handleRename(modalInput)}
               />
