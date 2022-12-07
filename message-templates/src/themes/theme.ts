@@ -66,9 +66,6 @@ export const appTheme = createTheme({
     infoStack: {
       margin: 1,
     },
-    statStack: {
-      // spacing: 2,
-    },
   },
 })
 

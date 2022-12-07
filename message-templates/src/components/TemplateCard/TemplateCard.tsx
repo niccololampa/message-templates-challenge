@@ -21,7 +21,8 @@ import {
   StyledMoreBox,
   StyledStatLabelBox,
   StyledInfoText,
-  StyledSectionText,
+  StyledNameText,
+  StyledCreatedText,
   StyledStatStack,
   StyledInfoStack,
   StyledStatsText,
@@ -100,11 +101,11 @@ const TemplateCard = ({
         <Box component="img" alt="coverPhoto" src={thumbnail} width={"100px"} height={"auto"} />
       </StyledImageBox>
       <StyledInfoBox>
-        <StyledSectionText>{name}</StyledSectionText>
+        <StyledNameText>{name}</StyledNameText>
         <StyledInfoText>Created by: {createdBy}</StyledInfoText>
       </StyledInfoBox>
       <StyledDateBox>
-        <StyledSectionText>CREATED</StyledSectionText>
+        <StyledCreatedText>CREATED</StyledCreatedText>
         <StyledInfoText>{moment(date, "MM/DD/YYYY").format("DD MMMM YYYY")}</StyledInfoText>
       </StyledDateBox>
       <StyledStatsBox>

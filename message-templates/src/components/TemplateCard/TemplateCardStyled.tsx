@@ -9,7 +9,7 @@ export const StyledTemplateBox = styled(Box)(() => ({
   width: "auto",
   minWidth: "930px",
   padding: 5,
-  boxShadow: "0 0 15px  #E4E4E4",
+  boxShadow: "0 0 15px#E4E4E4",
   marginBottom: "20px",
 }))
 
@@ -42,7 +42,6 @@ export const StyledStatsBox = styled(Box)(() => ({
   width: "45%",
   borderRadius: 1,
   minWidth: "fit-content",
-  // margin: "100px 0",
   backgroundColor: "#F2F2F2",
   justifyContent: "center",
   alignItems: "center",
@@ -66,7 +65,6 @@ export const StyledStatStack = styled(Stack)(() => ({
 }))
 
 export const StyledInfoStack = styled(Stack)(() => ({
-  // justifyContent: "center",
   alignItems: "center",
   width: "100%",
 }))
@@ -74,26 +72,36 @@ export const StyledInfoStack = styled(Stack)(() => ({
 export const StyledStatLabelBox = styled(Box)(() => ({
   display: "flex",
   alignItems: "center",
-  // justifyContent: "center",
   height: "100%",
+}))
+
+export const StyledNameText = styled(Typography)(() => ({
+  fontSize: "17px",
+  maxWidth: "100%",
+  overflow: "hidden",
+  fontWeight: "bold",
+  color: "#6c7188",
+}))
+
+export const StyledCreatedText = styled(Typography)(() => ({
+  maxWidth: "100%",
+  fontSize: "14px",
+  color: "#6c7188",
 }))
 
 export const StyledInfoText = styled(Box)(() => ({
   fontSize: "12px",
   fontWeight: "bold",
+  color: "#aeb0be",
 }))
 
 export const StyledStatsLabelText = styled(Typography)(() => ({
   fontSize: "12px",
   fontWeight: "bold",
+  color: "#6c7188",
 }))
 
 export const StyledStatsText = styled(Typography)(() => ({
-  fontSize: "12px",
+  fontSize: "18px",
   fontWeight: "bold",
-}))
-
-export const StyledSectionText = styled(Typography)(() => ({
-  maxWidth: "100%",
-  overflow: "hidden",
 }))
