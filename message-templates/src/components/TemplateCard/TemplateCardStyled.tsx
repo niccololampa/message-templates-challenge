@@ -5,7 +5,7 @@ export const StyledTemplateBox = styled(Box)(() => ({
   display: "flex",
   alignItems: "center",
   justifyContent: "space-between",
-  height: "80px",
+  height: "120px",
   width: "auto",
   minWidth: "930px",
   padding: 5,

@@ -114,6 +114,7 @@ const TemplateCard = ({
           height={"auto"}
           sx={{
             border: namePicHovered ? "2px solid #fed20B" : "none",
+            marginLeft: "15px",
           }}
         />
       </StyledImageBox>
