@@ -7,6 +7,7 @@ export const StyledTemplateBox = styled(Box)(() => ({
   justifyContent: "space-between",
   height: "80px",
   width: "auto",
+  minWidth: "930px",
   padding: 5,
   boxShadow: "0 0 15px  #E4E4E4",
   marginBottom: "20px",
@@ -14,6 +15,7 @@ export const StyledTemplateBox = styled(Box)(() => ({
 
 export const StyledImageBox = styled(Box)(() => ({
   width: "10%",
+  minWidth: "fit-content",
   height: "100%",
   display: "flex",
   alignItems: "center",
@@ -21,6 +23,7 @@ export const StyledImageBox = styled(Box)(() => ({
 
 export const StyledInfoBox = styled(Box)(() => ({
   width: "23%",
+  minWidth: "fit-content",
   display: "flex",
   flexDirection: "column",
   justifyContent: "center",
@@ -29,6 +32,7 @@ export const StyledInfoBox = styled(Box)(() => ({
 
 export const StyledDateBox = styled(Box)(() => ({
   width: "12%",
+  minWidth: "fit-content",
   display: "flex",
   flexDirection: "column",
   justifyContent: "center",
@@ -38,6 +42,7 @@ export const StyledDateBox = styled(Box)(() => ({
 export const StyledStatsBox = styled(Box)(() => ({
   width: "45%",
   borderRadius: 1,
+  minWidth: "fit-content",
   // margin: "100px 0",
   backgroundColor: "#F2F2F2",
   justifyContent: "center",
@@ -47,6 +52,7 @@ export const StyledStatsBox = styled(Box)(() => ({
 
 export const StyledMoreBox = styled(Box)(() => ({
   width: "5%",
+  minWidth: "fit-content",
   display: "flex",
   flexDirection: "column",
   justifyContent: "center",

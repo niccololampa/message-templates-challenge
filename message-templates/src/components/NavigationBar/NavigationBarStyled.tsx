@@ -3,10 +3,6 @@ import { AppBar, Container } from "@mui/material"
 
 export const StyledAppBar = styled(AppBar)(({ backcolor }: { backcolor?: string }) => ({
   backgroundColor: backcolor,
+  minWidth: "1000px",
   boxShadow: "none",
 }))
-
-export const StyledLogoContainer = styled(Container)({
-  flexGrow: 1,
-  justifyContent: "center",
-})
