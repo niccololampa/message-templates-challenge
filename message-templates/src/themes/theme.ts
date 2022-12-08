@@ -7,7 +7,9 @@ const colors = {
   neutralPrimary: "#ffffff",
   negPrimary: "#cc3341",
   negHover: "#990131",
-  textStandard: "#000000",
+  textPrimary: "#000000",
+  textSecondary: "#aeb0be",
+  labelTextPrimary: "#6c7188",
 }
 
 export const appTheme = createTheme({
@@ -40,7 +42,7 @@ export const appTheme = createTheme({
     coloredDefault: {
       backColor: colors.focusPrimary,
       backColorHover: colors.focusHover,
-      textColor: colors.textStandard,
+      textColor: colors.textPrimary,
       borderColor: "initial",
       borderStyle: "none",
       borderWidth: "iniital",
@@ -78,22 +80,22 @@ export const appTheme = createTheme({
     },
     text: {
       nameText: {
-        color: "#6c7188",
+        color: colors.labelTextPrimary,
         fontSize: "17px",
         fontWeight: "bold",
-        hoverColor: colors.textStandard,
+        hoverColor: colors.textPrimary,
       },
       createdText: {
-        color: "#6c7188",
+        color: colors.labelTextPrimary,
         fontSize: "14px",
         fontWeight: "bold",
       },
       infoText: {
-        color: "#aeb0be",
+        color: colors.textSecondary,
         fontSize: "12px",
       },
       labelText: {
-        color: "#6c7188",
+        color: colors.labelTextPrimary,
         fontSize: "12px",
       },
       statsText: {
