@@ -1,5 +1,15 @@
 import { createTheme } from "@mui/material/styles"
 
+// Update main theme colors here. For more specific customization update appTheme variables.
+const colors = {
+  focusPrimary: "#ffd000",
+  focusHover: "#ffe367",
+  neutralPrimary: "#ffffff",
+  negPrimary: "#cc3341",
+  negHover: "#990131",
+  textStandard: "#000000",
+}
+
 export const appTheme = createTheme({
   typography: {
     fontFamily: "CircularStd, Arial",
@@ -28,21 +38,21 @@ export const appTheme = createTheme({
   },
   buttons: {
     coloredDefault: {
-      backColor: "#ffd000",
-      backColorHover: "#ffe367",
-      textColor: "#000000",
+      backColor: colors.focusPrimary,
+      backColorHover: colors.focusHover,
+      textColor: colors.textStandard,
       borderColor: "initial",
       borderStyle: "none",
       borderWidth: "iniital",
     },
     cancel: {
-      backColor: "#ffffff",
-      backColorHover: "#ffd000",
+      backColor: colors.neutralPrimary,
+      backColorHover: colors.focusPrimary,
     },
     delete: {
-      backColor: "#cc3341",
-      backColorHover: "#990131",
-      textColor: "#ffffff",
+      backColor: colors.negPrimary,
+      backColorHover: colors.negHover,
+      textColor: colors.neutralPrimary,
     },
   },
   sideDrawer: {
@@ -71,7 +81,7 @@ export const appTheme = createTheme({
         color: "#6c7188",
         fontSize: "17px",
         fontWeight: "bold",
-        hoverColor: "#000000",
+        hoverColor: colors.textStandard,
       },
       createdText: {
         color: "#6c7188",
@@ -92,7 +102,7 @@ export const appTheme = createTheme({
       },
     },
     thumbnail: {
-      borderHoverColor: "#fed20b",
+      borderHoverColor: colors.focusPrimary,
       borderType: "solid",
       borderWidth: "2px",
     },
