@@ -44,6 +44,7 @@ const TemplateCard = ({
     template
 
   const theme = useTheme()
+  const templateCardTheme = theme?.templateCard
 
   const [namePicHovered, setNamePicHovered] = useState<boolean>(false)
 
@@ -113,7 +114,9 @@ const TemplateCard = ({
           width={"100px"}
           height={"auto"}
           sx={{
-            border: namePicHovered ? "2px solid #fed20B" : "none",
+            border: namePicHovered
+              ? `${templateCardTheme?.thumbnail?.borderHoverColor} ${templateCardTheme?.thumbnail?.borderType} ${templateCardTheme?.thumbnail?.borderWidth}`
+              : "none",
             marginLeft: "15px",
           }}
         />
@@ -129,67 +132,67 @@ const TemplateCard = ({
         <StyledNameText
           color={
             namePicHovered
-              ? theme?.templateCard?.text?.nameText?.hoverColor
-              : theme?.templateCard?.text?.nameText?.color
+              ? templateCardTheme?.text?.nameText?.hoverColor
+              : templateCardTheme?.text?.nameText?.color
           }
-          fontSize={theme?.templateCard?.text?.nameText?.fontSize}
-          fontWeight={theme?.templateCard?.text?.nameText?.fontWeight}
+          fontSize={templateCardTheme?.text?.nameText?.fontSize}
+          fontWeight={templateCardTheme?.text?.nameText?.fontWeight}
         >
           {name}
         </StyledNameText>
         <StyledInfoText
-          color={theme?.templateCard?.text?.infoText?.color}
-          fontSize={theme?.templateCard?.text?.infoText?.fontSize}
-          fontWeight={theme?.templateCard?.text?.infoText?.fontWeight}
+          color={templateCardTheme?.text?.infoText?.color}
+          fontSize={templateCardTheme?.text?.infoText?.fontSize}
+          fontWeight={templateCardTheme?.text?.infoText?.fontWeight}
         >
           Created by: {createdBy}
         </StyledInfoText>
       </StyledInfoBox>
       <StyledDateBox>
         <StyledCreatedText
-          color={theme?.templateCard?.text?.createdText?.color}
-          fontSize={theme?.templateCard?.text?.createdText?.fontSize}
-          fontWeight={theme?.templateCard?.text?.createdText?.fontWeight}
+          color={templateCardTheme?.text?.createdText?.color}
+          fontSize={templateCardTheme?.text?.createdText?.fontSize}
+          fontWeight={templateCardTheme?.text?.createdText?.fontWeight}
         >
           CREATED
         </StyledCreatedText>
         <StyledInfoText
-          color={theme?.templateCard?.text?.infoText?.color}
-          fontSize={theme?.templateCard?.text?.infoText?.fontSize}
-          fontWeight={theme?.templateCard?.text?.infoText?.fontWeight}
+          color={templateCardTheme?.text?.infoText?.color}
+          fontSize={templateCardTheme?.text?.infoText?.fontSize}
+          fontWeight={templateCardTheme?.text?.infoText?.fontWeight}
         >
           {moment(date, "MM/DD/YYYY").format("DD/MM/YYYY")}
         </StyledInfoText>
       </StyledDateBox>
       <StyledStatsBox>
-        <StyledStatStack direction="row" spacing={theme?.templateCard?.statStack?.spacing}>
+        <StyledStatStack direction="row" spacing={templateCardTheme?.statStack?.spacing}>
           {statsSpecs.map((stat) => (
             <StyledInfoStack
               key={stat.name}
               direction="column"
-              spacing={theme?.templateCard?.infoStack?.spacing}
-              marginLeft={theme?.templateCard?.infoStack?.margin}
+              spacing={templateCardTheme?.infoStack?.spacing}
+              marginLeft={templateCardTheme?.infoStack?.margin}
             >
               <StyledStatLabelBox>
                 <SvgIcon
                   component={stat.icon}
                   sx={{
                     color: stat.color,
-                    fontSize: theme?.templateCard?.svgIcons?.statIcons?.fontSize,
+                    fontSize: templateCardTheme?.svgIcons?.statIcons?.fontSize,
                   }}
                 />
                 <StyledStatsLabelText
-                  color={theme?.templateCard?.text?.labelText?.color}
-                  fontSize={theme?.templateCard?.text?.labelText?.fontSize}
-                  fontWeight={theme?.templateCard?.text?.labelText?.fontWeight}
+                  color={templateCardTheme?.text?.labelText?.color}
+                  fontSize={templateCardTheme?.text?.labelText?.fontSize}
+                  fontWeight={templateCardTheme?.text?.labelText?.fontWeight}
                 >
                   {stat.name}
                 </StyledStatsLabelText>
               </StyledStatLabelBox>
               <StyledStatsText
-                color={theme?.templateCard?.text?.statsText?.color}
-                fontSize={theme?.templateCard?.text?.statsText?.fontSize}
-                fontWeight={theme?.templateCard?.text?.statsText?.fontWeight}
+                color={templateCardTheme?.text?.statsText?.color}
+                fontSize={templateCardTheme?.text?.statsText?.fontSize}
+                fontWeight={templateCardTheme?.text?.statsText?.fontWeight}
               >
                 {stat.value}
               </StyledStatsText>

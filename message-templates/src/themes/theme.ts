@@ -91,6 +91,11 @@ export const appTheme = createTheme({
         fontWeight: "bold",
       },
     },
+    thumbnail: {
+      borderHoverColor: "#fed20b",
+      borderType: "solid",
+      borderWidth: "2px",
+    },
   },
 })
 
@@ -133,6 +138,11 @@ declare module "@mui/material/styles" {
         labelText?: TextType
         statsText?: TextType
       }
+      thumbnail?: {
+        borderHoverColor?: string
+        borderType?: string
+        borderWidth?: string | number
+      }
     }
   }
 
@@ -173,6 +183,11 @@ declare module "@mui/material/styles" {
         infoText?: TextType
         labelText?: TextType
         statsText?: TextType
+      }
+      thumbnail?: {
+        borderHoverColor?: string
+        borderType?: string
+        borderWidth?: string | number
       }
     }
   }
