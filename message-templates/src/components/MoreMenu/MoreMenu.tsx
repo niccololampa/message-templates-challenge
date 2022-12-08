@@ -6,7 +6,6 @@ import MenuItem from "@mui/material/MenuItem"
 import IconButton from "@mui/material/IconButton"
 import Tooltip from "@mui/material/Tooltip"
 import MoreHorizIcon from "@mui/icons-material/MoreHoriz"
-
 import { ModalTypes, MenuItemSpec } from "../../types"
 
 const MoreMenu = ({
@@ -14,7 +13,6 @@ const MoreMenu = ({
   handleOpenModal,
 }: {
   menuItemSpecs: MenuItemSpec[]
-
   handleOpenModal: ({ modalType }: { modalType: ModalTypes }) => void
 }) => {
   const theme = useTheme()
@@ -36,9 +34,9 @@ const MoreMenu = ({
             size="small"
             sx={{
               ml: 2,
-              backgroundColor: open ? "#ffe367" : "",
+              backgroundColor: open ? theme?.buttons?.coloredDefault?.backColorHover : "",
               "&:hover": {
-                backgroundColor: "#ffe367",
+                backgroundColor: theme?.buttons?.coloredDefault?.backColorHover,
               },
             }}
           >
