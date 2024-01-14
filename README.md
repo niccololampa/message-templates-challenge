@@ -1,4 +1,4 @@
-# Bonjoro Message Template Page
+# Sample Message Template Page
 
 <img width="1675" alt="Screen Shot 2022-12-07 at 11 11 09 PM" src="https://user-images.githubusercontent.com/37615906/206216106-9b0c2783-887f-4f19-9cd6-e1ea331ba8b0.png">
 
