@@ -47,9 +47,9 @@ const MessageTemplateView = () => {
 
     const newTemplate: MessageTemplate = {
       id: uuidv4(),
-      thumbnail: "/template-image.png",
+      thumbnail: `${process.env.REACT_APP_BASE_URL}/template-image.png`,
       name,
-      createdBy: "albert",
+      createdBy: "test user",
       date: moment().format("MM/DD/YYYY"),
       sent: 0,
       opened: 0,

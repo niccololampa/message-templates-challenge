@@ -6,6 +6,7 @@ import { appTheme } from "./themes/theme"
 import { NavigationBar } from "./components"
 
 function App() {
+  console.log(process.env.REACT_APP_BASE_URL)
   return (
     <ThemeProvider theme={appTheme}>
       <div>
@@ -23,8 +24,14 @@ function App() {
 
             <Box sx={{ flexGrow: 2 }}>
               <Routes>
-                <Route path="/message-templates-challenge/*" element={<MessageTemplateView />} />
-                <Route path="*" element={<Navigate to="/message-templates-challenge" replace />} />
+                <Route
+                  path={`${process.env.REACT_APP_BASE_URL}/*`}
+                  element={<MessageTemplateView />}
+                />
+                <Route
+                  path="*"
+                  element={<Navigate to={`${process.env.REACT_APP_BASE_URL}/`} replace />}
+                />
               </Routes>
             </Box>
           </Box>
