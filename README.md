@@ -1,6 +1,6 @@
 # Sample Message Templates Page
 
-<img width="1675" alt="Screen Shot 2022-12-07 at 11 11 09 PM" src="https://user-images.githubusercontent.com/37615906/206216106-9b0c2783-887f-4f19-9cd6-e1ea331ba8b0.png">
+![Screenshot 2024-01-15 at 9 16 35 PM](https://github.com/niccololampa/message-templates-challenge/assets/37615906/479d7f6d-5fb0-474f-b607-051f26274cc7)
 
 ## Frameworks used
 - React (Typescript)
@@ -26,18 +26,20 @@ Besides the styling and effects specified for the project the application has th
 
 User can add new message templates. Template name is required otherwise the `Create new template` button will be disabled. 
 
-<img width="1675" alt="Screen Shot 2022-12-07 at 10 49 55 PM" src="https://user-images.githubusercontent.com/37615906/206216369-2ffae7f5-955c-4ace-9a12-aa1adcfd85ad.png">
+![Screenshot 2024-01-15 at 9 20 42 PM](https://github.com/niccololampa/message-templates-challenge/assets/37615906/f20c4738-a7e3-44b0-8128-53cd6d21a0c4)
 
 ### Rename templates
 
 User can rename existing templates. Template name is required otherwise the `Rename` button will be disabled. 
-<img width="1675" alt="Screen Shot 2022-12-07 at 10 50 22 PM" src="https://user-images.githubusercontent.com/37615906/206216721-51394d36-c1af-4e32-a695-070d9f5569a4.png">
+![Screenshot 2024-01-15 at 9 21 30 PM](https://github.com/niccololampa/message-templates-challenge/assets/37615906/d4a95d63-262f-4aff-a6fe-3301d682cfe3)
+
 
 ### Delete template
 
 User can delete existing templates. 
 
-<img width="1675" alt="Screen Shot 2022-12-07 at 10 50 29 PM" src="https://user-images.githubusercontent.com/37615906/206216925-3fd653e5-dbef-436e-9383-602bb19ce3e4.png">
+![Screenshot 2024-01-15 at 9 22 02 PM](https://github.com/niccololampa/message-templates-challenge/assets/37615906/5ad6e0b1-6095-4805-ab43-a08d951eca4c)
+
 
 
 
