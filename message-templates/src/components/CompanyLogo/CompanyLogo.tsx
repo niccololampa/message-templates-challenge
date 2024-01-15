@@ -1,9 +1,9 @@
 import React from "react"
 import { useNavigate } from "react-router-dom"
 import { Box } from "@mui/material"
-import bonjoroLogo from "../../bonjoro-logo.png"
+import sampleLogo from "../../sample-logo.png"
 
-const BonjoroLogo = ({ width, height }: { width?: string | number; height?: string | number }) => {
+const CompanyLogo = ({ width, height }: { width?: string | number; height?: string | number }) => {
   const navigate = useNavigate()
 
   const handleClick = () => {
@@ -13,8 +13,8 @@ const BonjoroLogo = ({ width, height }: { width?: string | number; height?: stri
   return (
     <Box
       component="img"
-      alt="Bonjoro Logo"
-      src={bonjoroLogo}
+      alt="Company Logo"
+      src={sampleLogo}
       width={width}
       height={height}
       onClick={handleClick}
@@ -23,4 +23,4 @@ const BonjoroLogo = ({ width, height }: { width?: string | number; height?: stri
   )
 }
 
-export default BonjoroLogo
+export default CompanyLogo

@@ -32,8 +32,8 @@ export const appTheme = createTheme({
   },
   navigationBar: {
     logo: {
-      width: "186px",
-      height: "48px",
+      width: "70%",
+      height: "70%",
     },
     boxPadding: 2,
     backColor: "#2e2e36",
