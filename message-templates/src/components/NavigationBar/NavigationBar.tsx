@@ -1,5 +1,5 @@
 import React from "react"
-import { BonjoroLogo } from "../../components"
+import { CompanyLogo } from "../../components"
 import { useTheme } from "@mui/material/styles"
 import { Box, Toolbar, Container } from "@mui/material"
 import { StyledAppBar } from "./NavigationBarStyled"
@@ -17,7 +17,7 @@ const NavigationBar = () => {
                 padding: theme?.navigationBar?.boxPadding,
               }}
             >
-              <BonjoroLogo
+              <CompanyLogo
                 width={theme?.navigationBar?.logo?.width}
                 height={theme?.navigationBar?.logo?.height}
               />
