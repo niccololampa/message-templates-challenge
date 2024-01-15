@@ -110,7 +110,7 @@ const TemplateCard = ({
         <Box
           component="img"
           alt="coverPhoto"
-          src={thumbnail}
+          src={`${process.env.REACT_APP_BASE_URL}/template-image.png`}
           width={"100px"}
           height={"auto"}
           sx={{
