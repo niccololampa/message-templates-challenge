@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/message-templates-challenge/static/css/main.e6c13ad2.css",
-    "main.js": "/message-templates-challenge/static/js/main.4d94640c.js",
+    "main.js": "/message-templates-challenge/static/js/main.d91f7e31.js",
     "static/js/787.ae3b6006.chunk.js": "/message-templates-challenge/static/js/787.ae3b6006.chunk.js",
     "static/media/sample-logo.png": "/message-templates-challenge/static/media/sample-logo.8c8731af3e0b7aa41024.png",
     "static/media/sent_2.svg": "/message-templates-challenge/static/media/sent_2.337c674019d82c29d879b359d2f6ed1d.svg",
@@ -12,11 +12,11 @@
     "static/media/viewed.svg": "/message-templates-challenge/static/media/viewed.e92c62383bf7294562908abb17a8be00.svg",
     "static/media/replied_2.svg": "/message-templates-challenge/static/media/replied_2.346464a13ff11a4971a242ca3644c592.svg",
     "main.e6c13ad2.css.map": "/message-templates-challenge/static/css/main.e6c13ad2.css.map",
-    "main.4d94640c.js.map": "/message-templates-challenge/static/js/main.4d94640c.js.map",
+    "main.d91f7e31.js.map": "/message-templates-challenge/static/js/main.d91f7e31.js.map",
     "787.ae3b6006.chunk.js.map": "/message-templates-challenge/static/js/787.ae3b6006.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.e6c13ad2.css",
-    "static/js/main.4d94640c.js"
+    "static/js/main.d91f7e31.js"
   ]
 }
